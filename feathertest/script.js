@@ -26,7 +26,7 @@ FeatherTest = (function ( ft ) {
 			c.info( 'FeatherTest: ' + localStorage.ft_url + ' started  ' + Date() );
 			c.dir( ft.config.test );
 			callback();
-		}
+		};
 		xhr.send();
 	};
 
@@ -49,7 +49,7 @@ FeatherTest = (function ( ft ) {
 			// Reached end
 			else
 			{
-				if ( ft.config.failed == 0 )
+				if ( ft.config.failed === 0 )
 				{
 					c.info('FeatherTest: Test finished OK ( %c' + ft.config.passed + ' PASSED %c/ %c' + ft.config.failed + ' failed %c)', 'color: green', 'color: black', 'color: red', 'color: black' );
 				}
@@ -105,7 +105,8 @@ FeatherTest = (function ( ft ) {
 			step: null,
 			passed: null,
 			failed: null,
-			t: null
+			t: null,
+			vars: []
 		};
 		chrome.storage.local.set({
 			'config': ft.config
@@ -134,7 +135,7 @@ FeatherTest = (function ( ft ) {
 				{
 					var url = prompt( 'Specify the path to a test:', localStorage.ft_url || window.location.origin + '/test.txt' );
 
-					if ( localStorage.ft_url != null )
+					if ( url !== null )
 					{
 						localStorage.ft_url = url;
 						ft.config.step = 1; // skips 0 since it's just 'feathertest'
@@ -181,20 +182,37 @@ FeatherTest = (function ( ft ) {
 				ft.stop();
 			}
 		}
-	}
+	};
 
 
 
 	ft.stop = function()
 	{
 		ft.config.step = ft.config.test.length + 1;
-	}
+	};
 
 
 	ft.step = function( step )
 	{
-		ft.config.step = step;
-	}
+		ft.config.step = step - 1;
+	};
+
+
+	/**
+	 * Save a variable
+	 */
+	ft.set = function( param, value )
+	{
+		ft.config.vars[ param ] = value;
+	};
+
+	/**
+	 * Get a variable
+	 */
+	ft.get = function( param )
+	{
+		return ft.config.vars[ param ] || null;
+	};
 
 
 
