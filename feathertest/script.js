@@ -17,7 +17,6 @@ FeatherTest = (function ( ft ) {
 		xhr.open( 'GET', localStorage.ft_url + '?' + Math.random() );
 		xhr.onload = function(e) {
 			ft.config.test = this.response.split('\n');
-			console.log( ft.config.test );
 			if ( ft.config.test[0].substr(0,13).toLowerCase() !== "'feathertest'" )
 			{
 				c.error( "FeatherTest: Not a valid test! Tests must start with 'feathertest'");
@@ -80,14 +79,14 @@ FeatherTest = (function ( ft ) {
 		}, function() {
 			if ( !isNaN(parseFloat( order )) && isFinite( order ) ) // checks if it's a number
 			{
-				c.info('FeatherTest: [' + step + '] %cWaiting ' + order + 'ms...', 'color: grey' );
+				c.log('FeatherTest: [' + step + '] %cWaiting ' + order + 'ms...', 'color: grey' );
 				ft.config.t = setTimeout(function(){
 					_testLoop();
 				}, order );
 			}
 			else
 			{
-				c.info('FeatherTest: [' + step + '] %c' + order, 'color: blue' );
+				c.log('FeatherTest: [' + step + '] %c' + order, 'color: blue' );
 				eval( order );
 				_testLoop();
 			}
