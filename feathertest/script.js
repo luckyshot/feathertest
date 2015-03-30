@@ -133,10 +133,11 @@ FeatherTest = (function ( ft ) {
 				// Start test
 				else
 				{
-					localStorage.ft_url = prompt( 'Specify the path to a test:', localStorage.ft_url || window.location.origin );
+					var url = prompt( 'Specify the path to a test:', localStorage.ft_url || window.location.origin + '/test.txt' );
 
-					if ( localStorage.ft_url !== null )
+					if ( localStorage.ft_url != null )
 					{
+						localStorage.ft_url = url;
 						ft.config.step = 1; // skips 0 since it's just 'feathertest'
 						ft.config.passed = 0;
 						ft.config.failed = 0;
