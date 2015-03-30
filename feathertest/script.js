@@ -51,11 +51,11 @@ FeatherTest = (function ( ft ) {
 			{
 				if ( ft.config.failed === 0 )
 				{
-					c.info('FeatherTest: Test finished OK ( %c' + ft.config.passed + ' PASSED %c/ %c' + ft.config.failed + ' failed %c)', 'color: green', 'color: black', 'color: red', 'color: black' );
+					c.info('FeatherTest: Test finished OK ( %c' + ft.config.passed + ' PASSED %c/%c ' + ft.config.failed + ' failed %c)', 'color: green', 'color: black', 'color: red', 'color: black' );
 				}
 				else
 				{
-					c.info('FeatherTest: Test finished with ERRORS ( %c' + ft.config.passed + ' PASSED %c/ %c' + ft.config.failed + ' FAILED %c)', 'color: green', 'color: black', 'background: red; color: white', 'color: black' );
+					c.info('FeatherTest: Test finished with ERRORS ( %c' + ft.config.passed + ' PASSED %c/%c ' + ft.config.failed + ' FAILED %c)', 'color: green', 'color: black', 'background: red; color: white', 'color: black' );
 				}
 				_testReset();
 			}
@@ -79,14 +79,14 @@ FeatherTest = (function ( ft ) {
 		}, function() {
 			if ( !isNaN(parseFloat( order )) && isFinite( order ) ) // checks if it's a number
 			{
-				c.log('FeatherTest: [' + step + '] %cWaiting ' + order + 'ms...', 'color: grey' );
+				c.log('FeatherTest: %c[' + step + '] Waiting ' + order + 'ms...', 'color: grey' );
 				ft.config.t = setTimeout(function(){
 					_testLoop();
 				}, order );
 			}
 			else
 			{
-				c.log('FeatherTest: [' + step + '] %c' + order, 'color: blue' );
+				c.log('FeatherTest: %c[' + step + '] %c' + order, 'color: grey', 'color: blue' );
 				eval( order );
 				_testLoop();
 			}
@@ -170,12 +170,12 @@ FeatherTest = (function ( ft ) {
 		if ( f )
 		{
 			ft.config.passed = ft.config.passed + 1;
-			c.info( 'FeatherTest: %c PASS ', 'background: green; color: white;' );
+			c.info( 'FeatherTest: %c PASS %c (' + f + ')', 'background: green; color: white;', 'color: grey' );
 		}
 		else
 		{
 			ft.config.failed = ft.config.failed + 1;
-			c.error( 'FeatherTest: %c FAIL ', 'background: red; color: white;' );
+			c.error( 'FeatherTest: %c FAIL %c (' + f + ')', 'background: red; color: white;', 'color: grey' );
 
 			if ( fatal )
 			{

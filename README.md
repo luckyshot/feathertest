@@ -22,9 +22,15 @@ $('#form').submit()
 1000
 
 // check results are showing
-ft.isTrue(function(){ return document.querySelectorAll('li.results .item').length >= 6 ) })</pre>
+ft.isTrue( $('li.results .item').length )</pre>
 
 ### Changelog
+
+#### 1.0.5
+
+- Including info on each assertion
+- Removed unnecessary <code>function(){return}</code> from <code>ft.isTrue()</code> documentation
+- Improved console coloring for better readability
 
 #### 1.0.4
 
