@@ -8,6 +8,10 @@ http://xaviesteve.com/5302/feathertest-automated-website-testing-extension-googl
 
 ### Changelog
 
+#### 1.0.3
+
+- Fixed bug when canceling test prompt would try to run it anyway
+
 #### 1.0.2
 
 - Prefixed 'url' localStorage variable to 'ft_url' to avoid any possible conflicts with other variable definitions
