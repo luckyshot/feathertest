@@ -14,7 +14,7 @@ FeatherTest = (function ( ft ) {
 	var _testLoad = function( callback )
 	{
 		var xhr = new XMLHttpRequest();
-		xhr.open( 'GET', localStorage.url + '?' + Math.random() );
+		xhr.open( 'GET', localStorage.ft_url + '?' + Math.random() );
 		xhr.onload = function(e) {
 			ft.config.test = this.response.split('\n');
 			console.log( ft.config.test );
@@ -24,7 +24,7 @@ FeatherTest = (function ( ft ) {
 				_testReset();
 				return false;
 			}
-			c.info( 'FeatherTest: ' + localStorage.url + ' started  ' + Date() );
+			c.info( 'FeatherTest: ' + localStorage.ft_url + ' started  ' + Date() );
 			c.dir( ft.config.test );
 			callback();
 		}
@@ -133,9 +133,9 @@ FeatherTest = (function ( ft ) {
 				// Start test
 				else
 				{
-					localStorage.url = prompt( 'Specify the path to a test:', localStorage.url || window.location.origin );
+					localStorage.ft_url = prompt( 'Specify the path to a test:', localStorage.ft_url || window.location.origin );
 
-					if ( localStorage.url !== null )
+					if ( localStorage.ft_url !== null )
 					{
 						ft.config.step = 1; // skips 0 since it's just 'feathertest'
 						ft.config.passed = 0;
