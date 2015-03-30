@@ -26,6 +26,13 @@ ft.isTrue(function(){ return document.querySelectorAll('li.results .item').lengt
 
 ### Changelog
 
+#### 1.0.4
+
+- <code>ft.set()</code> and <code>ft.get()</code> methods to save custom variables
+- Removed extra <code>console.log</code> and less <code>console.info</code> icons for better readability
+- Fixed bug when canceling test prompt would try to run it anyway (2)
+- Code quality run
+
 #### 1.0.3
 
 - Fixed bug when canceling test prompt would try to run it anyway
