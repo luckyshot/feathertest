@@ -6,6 +6,8 @@ FeatherTest is a free Google Chrome extension to serve as a quick way to build s
 Read the full documentation, code examples, notes and more here:
 http://xaviesteve.com/5302/feathertest-automated-website-testing-extension-google-chrome
 
+Install the extension here: https://chrome.google.com/webstore/detail/feathertest-website-autom/cpconfnklmionglnfabhmpckegbjdbfe
+
 ### Test example
 
 <pre>'feathertest'
