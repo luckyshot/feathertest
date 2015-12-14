@@ -25,6 +25,10 @@ ft.isTrue( $('li.results .item').length )</pre>
 
 ### Changelog
 
+#### 1.0.6
+
+- Conditional ft.step()
+
 #### 1.0.5
 
 - Including info on each assertion
