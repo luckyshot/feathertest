@@ -3,10 +3,9 @@
 
 FeatherTest is a free Google Chrome extension to serve as a quick way to build simple tests and automate processes, you can also use it to register accounts or fill forms with data. It is really flexible, you can use any JavaScript and jQuery code to write your tests, doesn't need any server setup and once the test is written anyone in the team can run them from their browsers.
 
-Read the full documentation, code examples, notes and more here:
-http://xaviesteve.com/5302/feathertest-automated-website-testing-extension-google-chrome
+<a href="http://xaviesteve.com/5302/feathertest-automated-website-testing-extension-google-chrome"><b>Documentation</b></a>: Read the full documentation, code examples, notes and more here
 
-Install the extension here: https://chrome.google.com/webstore/detail/feathertest-website-autom/cpconfnklmionglnfabhmpckegbjdbfe
+<a href="https://chrome.google.com/webstore/detail/feathertest-website-autom/cpconfnklmionglnfabhmpckegbjdbfe"><b>Google Chrome Extension</b></a>: Install the extension here
 
 ### Test example
 
