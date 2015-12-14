@@ -192,8 +192,9 @@ FeatherTest = (function ( ft ) {
 	};
 
 
-	ft.step = function( step )
+	ft.step = function( step, condition )
 	{
+		if ( !condition ) return;
 		ft.config.step = step - 1;
 	};
 
